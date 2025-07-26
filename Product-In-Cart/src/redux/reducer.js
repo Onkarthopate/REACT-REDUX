@@ -7,7 +7,7 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'Add_To_Cart':
       const exists = state.items.find(item => item.id === action.payload.id);
-      if (exists) return state; // prevent duplicate
+      if (exists) return state;
       return {
         ...state,
         items: [...state.items, { ...action.payload, quantity: 1 }],
